@@ -1,0 +1,1 @@
+export type UrlStatus = 'new' | 'wrong' | 'valid';
