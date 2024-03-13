@@ -11,7 +11,7 @@ export class Url extends MyEntity {
     @Column({ nullable: false })
     url: string;
 
-    @Index()
+    @Index({ where: `status = 'new'`})
     @Column({
         type: 'enum',
         nullable: false,

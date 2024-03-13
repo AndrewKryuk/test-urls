@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
 import { UrlModule } from './url/url.module';
-import { HttpModule } from '@nestjs/axios';
 import { LoggingInterceptor } from './core/interceptors/logging.interceptor';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import config from './config';
@@ -14,7 +13,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
           isGlobal: true,
           load: [config]
       }),
-      HttpModule,
       ScheduleModule.forRoot(),
       TypeOrmModule.forRootAsync({
           imports: [ConfigModule],
